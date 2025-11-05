@@ -2,7 +2,7 @@ services:
 
   web:
     build:
-      context: /home/david/devops/Docker/Caronte/dockerfiles/proyectos/pbase/deploy
+      context: /home/david/devops/Docker/Caronte
       dockerfile: ./dockerfiles/base/ubbase
       args:
         - USUARIO=pepe 
