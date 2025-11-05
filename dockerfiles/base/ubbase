@@ -1,5 +1,6 @@
 FROM ubuntu 
 ARG USUARIO
+ENV USER = ${USUARIO}
 ARG PASSWORD
 RUN apt update && apt install -yq --no-install-recommends \
     nano \
