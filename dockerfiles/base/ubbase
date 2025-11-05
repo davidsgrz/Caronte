@@ -1,13 +1,21 @@
 FROM ubuntu 
 ARG USUARIO
 ARG PASSWORD
-RUN apt update && apt install -y1 --no-install-recommends \
+RUN apt update && apt install -yq --no-install-recommends \
     nano \
     git curl wget \
     iputils-ping net-tools \
     sudo
 
+#Copiar los scripts de inicio (entrypoint)
 
-RUN useradd -rm -d /home/${USUARIO} -s /bin/bash ${USUARIO}
-RUN echo "${USUARIO}:1234" | chpasswd
-RUN echo "Bienvenido ${USUARIO}" > /home/${USUARIO}/hello.txt
+RUN mkdir -p /root/admin/base
+#fijamos en el contenedor el directorio raiz
+WORKDIR /root/admin/base
+#contexto (el punto)
+COPY ./dockerfiles/admin/start.sh .
+RUN chmod +x ./start.sh
+
+
+ENTRYPOINT [ "./star.sh" ]
+

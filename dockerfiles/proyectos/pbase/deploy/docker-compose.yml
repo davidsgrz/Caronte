@@ -1,0 +1,9 @@
+services:
+
+  web:
+    build:
+      context: /home/david/devops/Docker/Caronte
+      dockerfile: ./dockerfiles/base/ubbase
+      args:
+        - USUARIO=pepe 
+    container_name: ctbase_ubbase
