@@ -3,10 +3,10 @@
 
 
 newUser() {
-        useradd -rm -d /home/david -s /bin/bash david
+        useradd -rm -d /home/${USUARIO} -s /bin/bash david
     
-    echo "david:1234" | chpasswd
-    echo "BIENVENIDO DAVID..." >> /home/david/BIENVENIDA_DAVID.txt
+    echo "${USUARIO}:1234" | chpasswd
+    echo "BIENVENIDO ${USUARIO}..." >> /home/${USUARIO}/BIENVENIDA_DAVID.txt
 }
 
 main() {
