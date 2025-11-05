@@ -18,5 +18,5 @@ COPY ./dockerfiles/base/admin/start.sh .
 RUN chmod +x ./start.sh
 
 
-ENTRYPOINT [ "./star.sh" ]
+ENTRYPOINT [ "./start.sh" ]
 
