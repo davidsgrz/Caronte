@@ -4,6 +4,8 @@ services:
     build:
       context: /home/david/devops/Docker/Caronte
       dockerfile: ./dockerfiles/base/ubbase
-      args:
-        - USUARIO=alfonso 
-    container_name: ctbase_ubbase
+      #args:
+        #- USUARIO=alfonso 
+    container_name: ctubbase
+    environment:
+      - USUARIO=alfonso
