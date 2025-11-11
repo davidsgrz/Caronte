@@ -2,10 +2,9 @@
 #carga las variables de entronno desde el docker compose
 set -e
 
-
 newUser() {
-        useradd -rm -d /home/${USUARIO} -s /bin/bash david
-        echo "${USUARIO}:1234" | chpasswd
+        useradd -rm -d /home/${USUARIO} -s /bin/bash ${USUARIO}
+        echo "${USUARIO}:${PASSWORD}" | chpasswd
         echo "BIENVENIDO ${USUARIO}..." >> /home/${USUARIO}/BIENVENIDA_DAVID.txt
 }
 
