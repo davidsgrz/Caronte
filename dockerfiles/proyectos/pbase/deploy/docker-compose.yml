@@ -9,3 +9,5 @@ services:
     container_name: ctubbase
     environment:
       - USUARIO=alfonso
+    volumes:
+      - ./logs:/root/logs
