@@ -5,5 +5,5 @@ services:
       context: /home/david/devops/Docker/Caronte
       dockerfile: ./dockerfiles/base/ubbase
       args:
-        - USUARIO=pepe 
+        - USUARIO=alfonso 
     container_name: ctbase_ubbase
