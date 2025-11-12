@@ -2,13 +2,13 @@ services:
 
   web:
     build:
-      context: /home/david/devops/Docker/Caronte
+      context: ${CONTEXTO} 
       dockerfile: ./dockerfiles/base/ubbase
       #args:
         # - USUARIO=alfonso 
-    container_name: ctpbase
-    environment:
-      - USUARIO=alfonso
-      - PASSWORD=pswalfonso
+    container_name: ${CONTENEDOR}
+
+    ENV_FILE:
+      - ./.env
     volumes:
-      - ./logs:/root/logsd
+      - ./logs:/root/logs
