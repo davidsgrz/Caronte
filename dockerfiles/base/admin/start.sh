@@ -1,53 +1,54 @@
 #!/bin/bash
-#carga las variables de entronno desde el docker compose
+# carga las variables de entono pasadas desde el D.Compose
 set -e
 
-check_usuario() {
+check_usuario(){
     if grep -q "${USUARIO}" /etc/passwd
-    then
-                echo "El usuario ${USUARIO} existe" >> /root/logs/informe.log
-                return 1
+    then    
+        echo "${USUARIO} se encuentra en el sistema" >> /root/logs/informe.log
+        return 1
     else
-                echo "El usuario ${USUARIO} no existe" >> /root/logs/informe.log
-                return 0
+        echo "${USUARIO} no se encuentra en el sistema" >> /root/logs/informe.log
+        return 0
     fi
 }
-check_home() {
-        if [ ! -d "/home/${USUARIO}" ]
-        then
-                echo "/home/${USUARIO} no existe" >> /root/logs/informe.log
-                return 0
-        else
-                echo "/home/${USUARIO} existe" >> /root/logs/informe.log
-                return 1
-        fi
-}
 
-newUser() {
-        check_usuario
+check_home(){
+    if [ ! -d "/home/${USUARIO}" ]
+    then
+        echo "/home/${USUARIO} no existe" >> /root/logs/informe.log
+        return 0 #true
+    else
+        echo "/home/${USUARIO} existe" >> /root/logs/informe.log
+        return 1 #false
+    fi
+}
+newUser(){
+    check_usuario
+    # `cat /et/password | grep morgado`
+    if [ "$?" -eq 0 ] #no existe usuario en passwd
+    then 
+        check_home
         if [ "$?" -eq 0 ]
         then
-            check_home
-            if [ "$?" -eq 0 ]
-            then
-                    useradd -rm -d "/home/${USUARIO}" -s /bin/bash "${USUARIO}"
-                    echo "${USUARIO}:${PASSWORD}" | chpasswd
-                    echo "BIENVENIDO ${USUARIO}..." > /home/"${USUARIO}"/BIENVENIDA_DAVID.txt
-            else
-                    echo "${USUARIO} no creado,existe home" >> /root/logs/informe.log
-            fi
-            else
-                    echo "${USUARIO} no creado,existe en psswd" >> /root/logs/informe.log
+            useradd -rm -d /home/${USUARIO} -s /bin/bash ${USUARIO}
+            echo "${USUARIO}:${PASSWORD}" | chpasswd
+            echo "Bienvenido ${USUARIO} a tu empresa ..." > /home/${USUARIO}/bienvenida.txt
+            echo "--> Usario ${USUARIO} creado" >> /root/logs/informe.log
+        else
+            echo "--> Usuario ${USUARIO} No creado, existe home" >> /root/logs/informe.log
         fi
+    else
+        echo "--> Usuario ${USUARIO} No creado, existe en passwd" >> /root/logs/informe.log
+    fi
 }
 
 main() {
-    mkdir -p /root/logs
     touch /root/logs/informe.log
     newUser
-#Encargada de mantener el contenedor en ejecución y que no muera
+    # encargada de dejar este contendor vivo en BGround
     tail -f /dev/null
+    ## script's que se encargar de configurar el imagen/contenedor
 }
 
 main
-   

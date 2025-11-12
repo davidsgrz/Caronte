@@ -6,9 +6,9 @@ services:
       dockerfile: ./dockerfiles/base/ubbase
       #args:
         # - USUARIO=alfonso 
-    container_name: ctubbase
+    container_name: ctpbase
     environment:
       - USUARIO=alfonso
-      - PASSWORD=alfonso1234
+      - PASSWORD=pswalfonso
     volumes:
-      - ./logs:/root/logs
+      - ./logs:/root/logsd
