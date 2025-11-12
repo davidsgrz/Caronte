@@ -17,9 +17,10 @@ newUser() {
         check_usuario
         if [ "$?" -eq 0 ]
         then
-            useradd -rm -d /home/${USUARIO} -s /bin/bash ${USUARIO}
+            useradd -rm -d "/home/${USUARIO}" -s /bin/bash "${USUARIO}"
             echo "${USUARIO}:${PASSWORD}" | chpasswd
-            echo "BIENVENIDO ${USUARIO}..." >> /home/${USUARIO}/BIENVENIDA_DAVID.txt
+            echo "BIENVENIDO ${USUARIO}..." >> /home/"${USUARIO}"/BIENVENIDA_DAVID.txt
+        fi
 }
 
 main() {
