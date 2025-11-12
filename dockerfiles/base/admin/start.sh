@@ -9,6 +9,7 @@ main() {
     # gestion del sudo ---> gestSudo.sh
     # gestion del ssh ---> gestSsh.sh
     # ...
+    mkdir -p /root/logs
     touch /root/logs/informe.log
     #newUser
     # encargada de dejar este contendor vivo en BGround
