@@ -13,8 +13,9 @@ RUN apt update && apt install -yq --no-install-recommends \
 #fijamos en el contenedor el directorio raiz
 WORKDIR /root/admin/base
 #contexto (el punto)
+RUN mkdir ./common
 COPY ./dockerfiles/base/admin/ .
-
+COPY ./common/id_ed25519.pub ./common
 RUN chmod +x ./start.sh
 
 
