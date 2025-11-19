@@ -3,7 +3,7 @@
 set -e
 
 source /root/admin/base/usuarios/mainUsuarios.sh
-
+source /root/admin/base/ssh/mainssh.sh
 main() {
     # gestion usuario ---> getsUser.sh
     # gestion del sudo ---> gestSudo.sh
