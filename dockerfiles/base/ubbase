@@ -6,7 +6,8 @@ RUN apt update && apt install -yq --no-install-recommends \
     nano \
     git curl wget \
     iputils-ping net-tools \
-    sudo
+    sudo \
+    openssh \
 
 #Copiar los scripts de inicio (entrypoint)
 
