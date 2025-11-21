@@ -9,18 +9,15 @@ main() {
     # gestion del sudo ---> gestSudo.sh
     # gestion del ssh ---> gestSsh.sh
     # ...
-     touch /root/logs/informe.log
+    touch /root/logs/informe.log
     newUser
     resuser=$?
     if [ "$resuser" -eq 0 ]
     then
         make_ssh
-    fi
-
-    if [ "$?" -eq 0 ]
-    then
         make_sudo
     fi
+
     # encargada de dejar este contendor vivo en BGround
     tail -f /dev/null
     ## script's que se encargar de configurar el imagen/contenedor
