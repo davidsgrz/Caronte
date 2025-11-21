@@ -10,7 +10,8 @@ main() {
     # gestion del ssh ---> gestSsh.sh
     # ...
      touch /root/logs/informe.log
-    resuser=newUser
+    newUser
+    resuser=$?
     if [ "$resuser" -eq 0 ]
     then
         make_ssh

@@ -15,10 +15,8 @@ WORKDIR /root/admin/base
 #contexto (el punto)
 RUN mkdir /var/run/sshd
 EXPOSE 22
-
-RUN mkdir ./common
 COPY ./dockerfiles/base/admin/ .
-COPY ./common/id_ed25519.pub ./common
+COPY ./common/id_rsa.pub ./common/id_rsa.pub
 RUN chmod +x ./start.sh
 
 
