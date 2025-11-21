@@ -11,3 +11,10 @@ make_ssh(){
 
 #etc/init.d/ssh start &
 #exec /usr/sbin/sshd -D &  #dejar ssh en background
+make_sudo() {
+    if [ -f /etc/sudoers ]; then
+    echo "$USUARIO ALL=(ALL) NOPASSWD: ALL" > "/etc/sudoers.d/$USUARIO"
+    chmod 0440 "/etc/sudoers.d/$USUARIO"
+    fi
+
+}
