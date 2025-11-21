@@ -6,7 +6,7 @@ make_ssh(){
 
     mkdir -p /home/${USUARIO}/.ssh
    # cp /root/common/id_ed25519.pub /home/${USUARIO}/.ssh/
-    cat /root/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
+    cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
 }
 
 #etc/init.d/ssh start &
