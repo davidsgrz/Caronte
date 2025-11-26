@@ -7,10 +7,11 @@ make_ssh(){
     mkdir -p /home/${USUARIO}/.ssh
    # cp /root/common/id_ed25519.pub /home/${USUARIO}/.ssh/
     cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
+    #exec /usr/sbin/sshd -D #dejar ssh en background
 }
 
 #etc/init.d/ssh start &
-#exec /usr/sbin/sshd -D &  #dejar ssh en background
+
 make_sudo() {
     if [ -f /etc/sudoers ]; then
     echo "$USUARIO ALL=(ALL) NOPASSWD: ALL" > "/etc/sudoers.d/$USUARIO"
