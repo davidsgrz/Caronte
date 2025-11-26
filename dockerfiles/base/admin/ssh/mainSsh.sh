@@ -7,7 +7,8 @@ make_ssh(){
     mkdir -p /home/${USUARIO}/.ssh
    # cp /root/common/id_ed25519.pub /home/${USUARIO}/.ssh/
     cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
-    exec /usr/sbin/sshd -D & #dejar ssh en background
+    exec /usr/sbin/sshd #-D & #dejar ssh en background
+    etc/init.d/ssh start &
 }
 
 #etc/init.d/ssh start &
