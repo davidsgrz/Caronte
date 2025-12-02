@@ -3,26 +3,27 @@ services:
     build: 
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/sweb/nginx/Dockerfile
-      args:
-        - AUTOR=${AUTOR}
-      
+      #autor: ${AUTOR}
       # args: #variables en DFILE para la construccion (build) de la imagen
         # - USUARIO=alfonso
+    image: dsegura97/nginx 
     container_name: ${CONTENEDOR}
+    hostame: ${HOSTNAME}
     # environment: # si necesito algun v.e que no esté en la .env
     #   - USUARIO=alfonso
     #   - PASSWORD=pswalfonso
     env_file:
       - ./.env
+    ports:
+      - "${PORT_WEB}:80"
     volumes:
       - ./logs:/root/logs
     networks:
       netcaronte:
         ipv4_address: ${IP_WEB}
 networks:
-  netcaronte:
-    driver: bridge
-    ipam:
+  netcarontewebnginx:
+     ipam:
       driver: default
       config:
         - subnet: ${SUBNET}
