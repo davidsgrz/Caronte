@@ -17,7 +17,7 @@ services:
       - db
     build: 
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/base/ubbase
+      dockerfile: ./dockerfiles/base/david
     container_name: ${CONTENEDOR}
     env_file:
       - ./.env
