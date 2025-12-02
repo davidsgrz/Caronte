@@ -23,6 +23,7 @@ services:
         ipv4_address: ${IP_WEB}
   networks:
       netcarontewebnginx:
+        driver: bridge
         ipam:
           driver: default
           config:
