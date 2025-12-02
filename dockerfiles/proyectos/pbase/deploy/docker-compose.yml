@@ -2,7 +2,8 @@ services:
   web:
     build: 
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/base/ubbase
+      dockerfile: ./dockerfiles/base/david
+      autor: ${AUTOR}
       # args: #variables en DFILE para la construccion (build) de la imagen
         # - USUARIO=alfonso
     container_name: ${CONTENEDOR}
