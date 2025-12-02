@@ -19,8 +19,8 @@ services:
     volumes:
       - ./logs:/root/logs
     networks:
-      netcarontewebnginx:
-        ipv4_address: ${IP_WEB}
+      - netcarontewebnginx
+    ipv4_address: ${IP_WEB}
   networks:
       netcarontewebnginx:
         driver: bridge
