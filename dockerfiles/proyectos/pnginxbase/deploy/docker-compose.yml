@@ -19,11 +19,9 @@ services:
     volumes:
       - ./logs:/root/logs
     networks:
-      netcaronte:
+      netcarontewebnginx:
         ipv4_address: ${IP_WEB}
-networks:
-  netcarontewebnginx:
-     ipam:
-      driver: default
-      config:
-        - subnet: ${SUBNET}
+        ipam:
+          driver: default
+          config:
+          - subnet: ${SUBNET}
