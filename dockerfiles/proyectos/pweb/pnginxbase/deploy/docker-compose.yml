@@ -18,6 +18,7 @@ services:
     networks:
       netcarontewebnginx:
         ipv4_address: ${IP}
+        driver: bridge
 networks:
   netcarontewebnginx:
     driver: bridge
