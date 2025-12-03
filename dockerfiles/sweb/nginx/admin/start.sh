@@ -12,5 +12,6 @@ main() {
     config_nginx
 
 tail -f /dev/null
+
 }
 main
