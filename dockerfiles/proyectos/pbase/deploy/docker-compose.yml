@@ -2,7 +2,7 @@ services:
   web:
     build: 
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/base/Dockerfile
+      dockerfile: ./dockerfiles/base/david
       args:
         - AUTOR=${AUTOR}
       
