@@ -18,11 +18,10 @@ services:
     networks:
       netcarontewebnginx:
         ipv4_address: ${IP}
-        
+
 networks:
-  netcarontewebnginx:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: ${SUBNET}
+   netcarontewebnginx:
+     ipam:
+       driver: default
+       config:
+         - subnet: ${SUBNET}
