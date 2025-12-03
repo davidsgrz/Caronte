@@ -23,6 +23,6 @@ networks:
   netcarontewebnginx:
     driver: bridge
     ipam:
-      driver: bridge
+      driver: default
       config:
         - subnet: ${SUBNET}
