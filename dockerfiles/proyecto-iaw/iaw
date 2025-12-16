@@ -1,10 +1,10 @@
 FROM dsegura97/nodejs
 
 
-RUN mkdir -p /root/admin/iaw
-WORKDIR /root/admin/iaw
+RUN mkdir -p /root/admin/proyecto-iaw
+WORKDIR /root/admin/proyecto-iaw
 COPY ./dockerfiles/proyecto-iaw/admin/start.sh .
-RUN chmod +x ./proyecto-iaw/admin/start.sh
+RUN chmod +x root/admin/proyecto-iaw/admin/start.sh
 
 EXPOSE 3000 80
 
