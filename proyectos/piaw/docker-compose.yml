@@ -7,7 +7,7 @@ services:
         - AUTOR=${AUTOR}
     image: dsegura97/node
     container_name: ${CONTENEDOR}
-    hostname: ${HOSTNAME}
+   
     
     env_file:
       - ./.env
