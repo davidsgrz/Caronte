@@ -1,4 +1,4 @@
-FROM dsegura97/node
+FROM dsegura97/nodejs
 
 
 RUN mkdir -p /root/admin/iaw
