@@ -1,11 +1,17 @@
 FROM dsegura97/nodejs
 
-
+# Crear y entrar al directorio de trabajo
 RUN mkdir -p /root/admin/proyecto-iaw
 WORKDIR /root/admin/proyecto-iaw
-COPY ./dockerfiles/proyecto-iaw/admin/start.sh .
-RUN chmod +x root/admin/proyecto-iaw/admin/start.sh
 
+# Copiar SOLO el script correcto
+COPY dockerfiles/proyecto-iaw/admin/start.sh .
+
+# Dar permisos
+RUN chmod +x ./start.sh
+
+# Exponer puertos
 EXPOSE 3000 80
 
-ENTRYPOINT ["./admin/start.sh"]
+# Ejecutar el script
+ENTRYPOINT ["./start.sh"]
