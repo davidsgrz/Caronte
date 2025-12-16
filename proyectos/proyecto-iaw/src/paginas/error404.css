@@ -1,0 +1,22 @@
+.error-code {
+    font-size: 10rem; 
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -5px; 
+}
+.error-title {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 300; 
+}
+
+@media (min-width: 992px) {
+    .page-wrapper .mercadona-logo {
+        height: 70px !important;
+    }
+    .content-box { width: 75%; }
+}
+@media (max-width: 992px) {
+    .content-box { width: 100%; box-shadow: none !important; }
+    .error-code { font-size: 7rem; }
+}

@@ -1,6 +1,7 @@
 #!/bin/bash
 config_nginx () {
-    nginx &
+    service nginx restart
+    service nginx stop
 }
 
 load_entrpoint_base () {
@@ -12,7 +13,7 @@ main() {
     load_entrpoint_base
     config_nginx
 
-tail -f /dev/null
+#tail -f /dev/null
 
 }
 main

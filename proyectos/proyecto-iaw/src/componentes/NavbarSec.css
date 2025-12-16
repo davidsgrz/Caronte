@@ -1,0 +1,105 @@
+.mercadona-header {
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+}
+
+.text-mercadona-green { color: #007a4d !important; }
+.bg-mercadona-green { background-color: #007a4d !important; }
+
+.top-bar {
+    background-color: white;
+    width: 100%;
+    height: auto; 
+    min-height: 80px; 
+}
+
+.mercadona-logo {
+    height: 50px !important;
+    width: auto !important;
+}
+
+@media (min-width: 992px) {
+    .mercadona-logo {
+        height: 55px;
+    }
+}
+
+.col-derecha {
+    flex-shrink: 0; 
+}
+
+.link-utilidad {
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.link-utilidad:hover {
+    opacity: 0.8;
+}
+
+.lang-selector-custom .dropdown-toggle {
+    font-size: 0.8rem !important;
+    color: #666 !important;
+    padding: 2px 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.lang-selector-custom .dropdown-toggle::after {
+    vertical-align: middle;
+}
+
+.btn-compra-online {
+    background-color: #d64112 !important;
+    font-size: 0.95rem;
+}
+
+.btn-compra-online:hover {
+    background-color: #00754d !important;
+}
+
+.bottom-bar {
+    min-height: 52px;
+}
+
+.main-nav-links .nav-link {
+    color: white !important;
+    padding: 12px 15px !important;
+    font-size: 0.95rem;
+}
+
+.main-nav-links .nav-link:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.custom-dropdown .dropdown-menu {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 0 0 5px 5px;
+    margin-top: 0;
+}
+
+.custom-dropdown .dropdown-item {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    color: #007a4d;
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .mercadona-logo { height: 35px; }
+    
+    .small-nav-row {
+        margin-bottom: 0 !important;
+    }
+    
+    .btn-compra-online {
+        padding: 5px 15px !important;
+        font-size: 0.85rem;
+    }
+}
