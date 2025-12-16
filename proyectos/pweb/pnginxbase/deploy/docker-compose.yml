@@ -12,7 +12,8 @@ services:
     env_file:
       - ./.env
     ports:
-      - ${PORT_WEB}:22
+      - "${PORT_WEB}:80"
+      - 3010:3000
     volumes:
       - ./logs:/root/logs
     networks:

@@ -1,17 +1,18 @@
-FROM dsegura97/nodejs
+FROM dsegura97/nodebase
 
-# Crear y entrar al directorio de trabajo
-RUN mkdir -p /root/admin/proyecto-iaw
-WORKDIR /root/admin/proyecto-iaw
+WORKDIR /app
 
-# Copiar SOLO el script correcto
-COPY dockerfiles/proyecto-iaw/admin/start.sh .
+# Copiamos el React REAL
+COPY proyectos/proyecto-iaw/package*.json ./
+RUN npm install
 
-# Dar permisos
-RUN chmod +x ./start.sh
+COPY proyectos/proyecto-iaw/ .
+RUN npm run build
 
-# Exponer puertos
+# Pasamos el build a nginx
+RUN rm -rf /var/www/html/* \
+ && cp -r build/* /var/www/html/
+
 EXPOSE 3000 80
 
-# Ejecutar el script
-ENTRYPOINT ["./start.sh"]
+CMD ["nginx", "-g", "daemon off;"]
