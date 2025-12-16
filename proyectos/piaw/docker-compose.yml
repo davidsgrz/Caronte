@@ -5,7 +5,7 @@ services:
       dockerfile: ./dockerfiles/proyecto-iaw/iaw
       args:
         - AUTOR=${AUTOR}
-    image: dsegura97/node
+    image: dsegura97/piaw
     container_name: ${CONTENEDOR}
    
     
