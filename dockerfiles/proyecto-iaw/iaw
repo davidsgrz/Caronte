@@ -8,4 +8,4 @@ RUN chmod +x ./start.sh
 
 EXPOSE 3000 80
 
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["./admin/start.sh"]

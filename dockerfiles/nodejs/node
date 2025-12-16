@@ -12,4 +12,4 @@ COPY ./proyectos/proyecto-iaw/ /root/admin/node/proyectos/iaw/
 COPY ./dockerfiles/nodejs/admin/start.sh .
 RUN chmod +x /root/admin/node/start.sh
 
-ENTRYPOINT [ "./start.sh" ]
+ENTRYPOINT [ "./admin/start.sh" ]
