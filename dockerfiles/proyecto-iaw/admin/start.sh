@@ -3,11 +3,11 @@
 set -e
 
 
-directorio_de_trabajo(){
-    cd /root/admin/node/proyectos/iaw
+directorio_trabajo(){
+    cd /root/admin/node/proyectos/piaw
 }
 
-contruir_y_copiar(){
+crear_copiar(){
     npm install
     npm run build
     cp -r dist/* /var/www/html/
@@ -20,8 +20,8 @@ cargar_nginx(){
 
 
 main(){
-    directorio_de_trabajo
-    contruir_y_copiar
+    directorio_trabajo
+    crear_copiar
     cargar_nginx
 }
 
