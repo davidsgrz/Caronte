@@ -1,4 +1,4 @@
-#!/bin/bash    
+#!/bin/sh  
 cd /root/admin/node/proyectos/iawprojects
 # Instalar dependencias
 npm install;

@@ -1,7 +1,4 @@
-#!/bin/bash
-
-set -e 
-
+#!/bin/sh
 bash /root/admin/sweb/nginx/admin/start.sh
 
 cd /root/admin/node/proyectos/iawprojects
