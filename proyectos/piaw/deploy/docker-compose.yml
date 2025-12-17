@@ -7,8 +7,6 @@ services:
         - AUTOR=${AUTOR}
     image: dsegura97/piaw
     container_name: ${CONTENEDOR}
-   
-    
     env_file:
       - ./.env
     ports:
