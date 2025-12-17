@@ -4,7 +4,6 @@ set -e
 
 source /root/admin/base/usuarios/mainUsuarios.sh
 source /root/admin/base/ssh/mainSsh.sh
-source /root/admin/base/sudo/mainSudo.sh
 
 main() {
     # gestion usuario ---> getsUser.sh

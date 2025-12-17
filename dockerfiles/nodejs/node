@@ -1,10 +1,14 @@
 FROM dsegura97/nginx
 
 # Instalar Node y npm
-RUN apt update && apt install -y nodejs npm && rm -rf /var/lib/apt/lists/*
+RUN apt install -y nodejs npm && rm -rf /var/lib/apt/lists/*
+
+# Cre
 
 # Directorio de la app
 WORKDIR /root/admin/node/proyectos/iaw
+
+# Copiar el proyecto en el directorio de trabajo
 
 # Copiar script de arranque
 COPY dockerfiles/nodejs/admin/start.sh .

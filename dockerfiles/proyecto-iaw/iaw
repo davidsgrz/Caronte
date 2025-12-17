@@ -1,6 +1,6 @@
 FROM dsegura97/nodebase
 
-WORKDIR /app
+WORKDIR /root/admin/node/proyectos/iaw
 
 # Copiamos el React REAL
 COPY proyectos/proyecto-iaw/package*.json ./
