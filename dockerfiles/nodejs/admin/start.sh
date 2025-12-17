@@ -1,9 +1,9 @@
-#!/bin/sh
-set -e
+#!/bin/bash
 
-cd /root/admin/node/proyectos/iaw
+set -e 
 
+bash /root/admin/sweb/nginx/admin/start.sh
 
-
-echo "Arrancando Node..."
-exec node app.js
+cd /root/admin/node/proyectos/iawprojects
+npm install
+npm run dev -- --host 0.0.0.0 --port 3000 

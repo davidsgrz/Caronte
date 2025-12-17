@@ -1,23 +1,16 @@
 FROM dsegura97/nginx
 
-# Instalar Node y npm
-RUN apt install -y nodejs npm && rm -rf /var/lib/apt/lists/*
+RUN apt install -yq --no-install-recommends \
+    curl -fssl https://deb.nodesource.com/setup_20.x | bash - &&\
+    apt install -yq nodejs \
+    npm
 
-# Cre
+RUN mkdir -p /root/admin/node
+RUN mkdir -p /root/admin/node/proyectos/iawprojects
+WORKDIR /root/admin/node
+COPY ./proyectos/proyecto-iaw /root/admin/node/proyectos/iawprojects
 
-# Directorio de la app
-WORKDIR /root/admin/node/proyectos/iaw
+COPY ./dockerfiles/node/admin/start.sh .
+RUN chmod +x /root/admin/node/start.sh
 
-# Copiar el proyecto en el directorio de trabajo
-
-# Copiar script de arranque
-COPY dockerfiles/nodejs/admin/start.sh .
-
-# Dar permisos
-RUN chmod +x ./start.sh
-
-# Exponer puertos (opcional)
-EXPOSE 3000 80
-
-# Ejecutar Node
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT [ "./start.sh" ]
